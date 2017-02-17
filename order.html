@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="css/materialize.css">
+  <link rel="stylesheet" href="css/materialize.min.css">
+  <link rel="stylesheet" href="css/my.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <title>Galvanize Delivers</title>
+
+</head>
+
+<body>
+  <header>
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper">
+          <a href="index.html" class="brand-logo">Galvanize Delivers</a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="order.html">Order Delivery</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- the columns section -->
+  <div class="container">
+    <div class="row">
+      <div class="col l6">
+        <h3>Menu</h3>
+        <div class="row">
+          <div class="col s12 m6 l6">
+            <!-- card -->
+            <div class="card">
+              <div class="card-image">
+                <img src="img/burger.jpg">
+                <span class="card-title"></span>
+              </div>
+              <div class="card-content">
+                <p>Royale with Cheese</p>
+                <p>$8.99</p>
+              </div>
+              <div class="card-action">
+                <a id="burger" href="#">ADD TO ORDER</a>
+              </div>
+            </div>
+          </div>
+          <!-- end card -->
+
+          <!-- card -->
+          <div class="col s12 m6 l6">
+            <!-- card -->
+            <div class="card">
+              <div class="card-image">
+                <img src="img/ribs.jpg">
+                <span class="card-title"></span>
+              </div>
+              <div class="card-content">
+                <p>Smoked Swine</p>
+                <p>$14.99</p>
+              </div>
+              <div class="card-action">
+                <a href="#">ADD TO ORDER</a>
+              </div>
+            </div>
+          </div>
+          <!-- end card -->
+        </div>
+        <div class="row">
+
+          <!-- end first column, start second -->
+          <div class="col s12 m6 l6">
+            <!-- card -->
+            <div class="card">
+              <div class="card-image">
+                <img src="img/pizza.jpg">
+                <span class="card-title"></span>
+              </div>
+              <div class="card-content">
+                <p>Arugula Pie</p>
+                <p>$11.99</p>
+              </div>
+              <div class="card-action">
+                <a href="#" id="order pie">ADD TO ORDER</a>
+              </div>
+            </div>
+          </div>
+          <!-- end card -->
+
+          <!-- card -->
+          <div class="col s12 m6 l6">
+            <!-- card -->
+            <div class="card">
+              <div class="card-image">
+                <img src="img/ice_cream.jpg">
+                <span class="card-title"></span>
+              </div>
+              <div class="card-content">
+                <p>Ice Cream Biscuit</p>
+                <p>$7.99</p>
+              </div>
+              <div class="card-action">
+                <a href="#">ADD TO ORDER</a>
+              </div>
+            </div>
+          </div>
+          <!-- end card -->
+        </div>
+
+
+      </div>
+      <div class="col s12 m5 l5">
+        <h3>Order</h3>
+        <table class="bordered" >
+          <thead>
+            <tr>
+              <th data-field="id">Clear</th>
+              <th data-field="name">Item Name</th>
+              <th data-field="price">Item Price</th>
+            </tr>
+          </thead>
+
+          <tbody id="orderTable">
+            <tr class="placeholder">
+              <td ></td>
+              <td ></td>
+              <td ></td>
+            </tr>
+            <tr class="placeholder">
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr class="placeholder">
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr class="placeholder">
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr class="placeholder">
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+
+
+          <table class="bordered">
+            <thead>
+              <tr>
+                <th data-field="1"></th>
+                <th data-field="2"></th>
+                <th data-field="3"></th>
+
+              </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+              <td colspan='2'>Subtotal:</td>
+              <td></td>
+              <td class="bump" id="sub">$0.00</td>
+            </tr>
+            <tr>
+              <td colspan='2'>Tax:</td>
+              <td></td>
+              <td class="bump">$0.00</td>
+            </tr>
+            <tr>
+              <td colspan='2'>Total:</td>
+              <td></td>
+              <td class="bump">$0.00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end of order table -->
+      <!-- <form class="col s12 m5 l5">
+  <div class="row">
+    <div class="input-field col s6">
+      <i class="material-icons prefix">account_circle</i>
+      <input id="icon_prefix" type="text" class="validate" placeholder="First Name">
+      <label for="icon_prefix"></label>
+    </div>
+    <div class="input-field col s6">
+      <i class="material-icons prefix">phone</i>
+      <input id="icon_telephone" type="tel" class="validate" placeholder="Telephone">
+      <label for="icon_telephone"></label>
+    </div>
+    <div class="input-field col s6">
+      <i class="material-icons prefix">business</i>
+      <input id="icon_prefix" type="text" class="validate" placeholder="Address Location to Deliver">
+      <label for="icon_prefix"></label>
+    </div>
+    <p class="bump">Please Indicate Day/Time of Delivery Requested:</p>
+    <div class="input-field col s6">
+      <i class="material-icons prefix">schedule</i>
+      <input id="icon_prefix" type="datetime-local" class="validate">
+      <label for="icon_prefix"></label>
+      </div>
+
+    <div class="input-field col s6">
+      <i class="material-icons prefix">email</i>
+      <input id="icon_prefix" type="email" class="validate" placeholder="Email">
+      <label for="icon_prefix"></label>
+    </div>
+
+    <div class="input-field col s6">
+      <i class="material-icons prefix">mode_edit</i>
+      <textarea rows="4" cols="50" id="icon_prefix" class="validate">
+      Special Instructions for Your Order
+      </textarea>
+      <label for="icon_prefix"></label>
+    </div>
+
+  </div>
+</form> -->
+      <!-- input form -->
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">account_circle</i>
+              <input id="icon_prefix" type="text" class="validate" placeholder="First Name">
+              <label for="icon_prefix"></label>
+            </div>
+            <div class="input-field col s6">
+              <i class="material-icons prefix">phone</i>
+              <input id="icon_telephone" type="tel" class="validate" placeholder="Telephone">
+              <label for="icon_telephone"></label>
+            </div>
+            <div class="input-field col s6">
+              <i class="material-icons prefix">business</i>
+              <input id="icon_prefix" type="text" class="validate" placeholder="Address Location to Deliver">
+              <label for="icon_prefix"></label>
+            </div>
+            <p class="bump">Please Indicate Day/Time of Delivery Requested:</p>
+            <div class="input-field col s6">
+              <i class="material-icons prefix">schedule</i>
+              <input id="icon_prefix" type="datetime-local" class="validate">
+              <label for="icon_prefix"></label>
+            </div>
+
+            <div class="input-field col s6">
+              <i class="material-icons prefix">email</i>
+              <input id="icon_prefix" type="email" class="validate" placeholder="Email">
+              <label for="icon_prefix"></label>
+            </div>
+
+            <div class="input-field col s6">
+              <i class="material-icons prefix">mode_edit</i>
+              <textarea rows="4" cols="50" id="icon_prefix" class="validate">
+          Special Instructions for Your Order
+          </textarea>
+              <label for="icon_prefix"></label>
+            </div>
+
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="order.js"></script>
+</body>
+
+</html>
