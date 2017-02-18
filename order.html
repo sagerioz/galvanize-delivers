@@ -47,7 +47,7 @@
                 <p>$8.99</p>
               </div>
               <div class="card-action">
-                <a id="burger" href="#">ADD TO ORDER</a>
+                <a id="burger" class="button" href="#">ADD TO ORDER</a>
               </div>
             </div>
           </div>
@@ -66,7 +66,7 @@
                 <p>$14.99</p>
               </div>
               <div class="card-action">
-                <a href="#">ADD TO ORDER</a>
+                <a id="ribs" class="button" href="#">ADD TO ORDER</a>
               </div>
             </div>
           </div>
@@ -87,7 +87,7 @@
                 <p>$11.99</p>
               </div>
               <div class="card-action">
-                <a href="#" id="order pie">ADD TO ORDER</a>
+                <a href="#" class="button" id="pie">ADD TO ORDER</a>
               </div>
             </div>
           </div>
@@ -106,7 +106,7 @@
                 <p>$7.99</p>
               </div>
               <div class="card-action">
-                <a href="#">ADD TO ORDER</a>
+                <a id="icecream" class="button" href="#">ADD TO ORDER</a>
               </div>
             </div>
           </div>
@@ -117,7 +117,7 @@
       </div>
       <div class="col s12 m5 l5">
         <h3>Order</h3>
-        <table class="bordered" >
+        <table class="bordered" id="table">
           <thead>
             <tr>
               <th data-field="id">Clear</th>
@@ -127,31 +127,7 @@
           </thead>
 
           <tbody id="orderTable">
-            <tr class="placeholder">
-              <td ></td>
-              <td ></td>
-              <td ></td>
-            </tr>
-            <tr class="placeholder">
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr class="placeholder">
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr class="placeholder">
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr class="placeholder">
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
+
           </tbody>
         </table>
 
@@ -175,12 +151,13 @@
             <tr>
               <td colspan='2'>Tax:</td>
               <td></td>
-              <td class="bump">$0.00</td>
+              <td class="bump"
+              id="tax">$0.00</td>
             </tr>
             <tr>
               <td colspan='2'>Total:</td>
               <td></td>
-              <td class="bump">$0.00</td>
+              <td class="bump" id="grandTotal">$0.00</td>
             </tr>
           </tbody>
         </table>
