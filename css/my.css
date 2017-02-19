@@ -69,3 +69,11 @@ body {
   main {
     flex: 1 0 auto;
   }
+  hr {
+    display: block;
+    height: 3px;
+    border: 0;
+    border-top: 3px double #ee2e74;
+    margin: 2em 0;
+    padding: 0;
+}

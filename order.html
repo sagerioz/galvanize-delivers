@@ -168,30 +168,52 @@
               </tr>
               <tr>
                 <td colspan='2'>
-                  <ul class="right hide-on-med-and-down">
-                    <li><a class="btn disabled" href="orderCompleted.html">Recalculate</a></li>
+                  <ul>
+                    <li><a class="btn" id="moreStuffButn">Add Ons</a></li>
                   </ul>
                 </td>
                 <td></td>
                 <td></td>
               </tr>
+              <tr>
+                <td colspan='2'>
+                  <form action="#" style="display:none;" id="moreStuff">
+                    <p>Choose additional items:</p>
+                      <p>
+                        <input type="checkbox" id="togo_utensils" />
+                        <label for="togo_utensils">Plastic togo utensils</label>
+                      </p>
+                      <p>
+                        <input type="checkbox" id="napkins"/>
+                        <label for="napkins">Napkins</label>
+                      </p>
+                      <p>
+                        <input type="checkbox" id="condiments"/>
+                        <label for="condiments">Condiments</label>
+                      </p>
 
+                    </form>
+                  </td>
+                  <td></td>
+                  <td></td>
             </tbody>
           </table>
+
         </div>
 
-        <!-- input form -->
+        <!-- input form for customer info-->
         <div class="row">
-          <form class="col s12">
-            <div class="row">
+
+          <form class="col s12" id='customer_info'>
+            <div class="row">  <hr>
               <div class="input-field col s6">
                 <i class="material-icons prefix">account_circle</i>
-                <input id="icon_prefix" type="text" class="validate" placeholder="First Name">
+                <input id="names_field" type="text" class="validate" placeholder="First and Last Name">
                 <label for="icon_prefix"></label>
               </div>
               <div class="input-field col s6">
                 <i class="material-icons prefix">phone</i>
-                <input id="icon_telephone" type="tel" class="validate" placeholder="Telephone">
+                <input id="telephone" type="tel" class="validate" placeholder="Telephone">
                 <label for="icon_telephone"></label>
               </div>
               <div class="input-field col s6">
@@ -202,19 +224,19 @@
               <p class="bump">Please Indicate Day/Time of Delivery Requested:</p>
               <div class="input-field col s6">
                 <i class="material-icons prefix">schedule</i>
-                <input id="icon_prefix" type="datetime-local" class="validate">
+                <input id="icon_prefix" type="datetime-local">
                 <label for="icon_prefix"></label>
               </div>
 
               <div class="input-field col s6">
                 <i class="material-icons prefix">email</i>
                 <input id="icon_prefix" type="email" class="validate" placeholder="Email">
-                <label for="icon_prefix"></label>
+                <label for="icon_prefix" data-error="wrong" data-success="right"></label>
               </div>
 
               <div class="input-field col s6">
                 <i class="material-icons prefix">mode_edit</i>
-                <textarea rows="4" cols="50" id="icon_prefix" class="validate">
+                <textarea rows="4" cols="50" id="icon_prefix">
           Special Instructions
           </textarea>
                 <label for="icon_prefix"></label>
@@ -225,8 +247,16 @@
           </form>
 
         </div>
-        <div class="centered">
-          <a href="orderCompleted.html"><img src="img/banner_submit.png"</a>
+
+<!-- Submit and Toast -->
+
+
+
+
+
+
+        <div class="centered" id="submit_banner">
+          <a id="submit_banner"><img src="img/banner_submit.png"</a>
 
         </div>
   </main>
@@ -241,7 +271,7 @@
         <div class="col l4 offset-l2 s12">
           <ul>
             <li><a class="grey-text text-lighten-3" href="index.html">Home</a></li>
-            <li><a class="grey-text text-lighten-3" href="order.html">Order Delivery</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Order Delivery</a></li>
           </ul>
         </div>
       </div>

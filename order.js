@@ -56,7 +56,6 @@ $(document).ready(function() {
     let subtotal = 0;
     for (name in orderObject) {
       if (orderObject[name].quantity !== 0) {
-
         let currentTotal = orderObject[name].quantity * orderObject[name].price
 
         let quantity = orderObject[name].quantity
@@ -66,7 +65,7 @@ $(document).ready(function() {
         let grandTotal = parseInt(subtotal) + parseInt(tax)
         grandTotal = (grandTotal).toFixed(2)
         let row = $('<tr></tr>').appendTo(tbody)
-        console.log("ROW", row);
+        // console.log("ROW", row);
         $('#sub').text("$" + subtotal)
         $('#tax').text("$" + tax)
         $('#grandTotal').text("$" + grandTotal)
@@ -87,17 +86,28 @@ $(document).ready(function() {
     return table[0];
   }
 
-  $('#orderTable').click(function(){
+  $('#orderTable').click(function() {
     if ($(event.target).is('.delete')) {
       let toDelete = $(event.target).attr('id')
       orderObject[toDelete].quantity -= 1
       createTable();
-      $('.bump').text('')
 
     }
   })
+  $('#moreStuffButn').click(function(e){
+  $('#moreStuff').show();
+   e.preventDefault();
+});
 
-
-
+// $('#submit_banner').click(function(){
+//   var names = $('#names_field').val();
+//   console.log("NAMES", names);
+//   var phone = $('#telephone').val();
+//   if(!names){
+//     alert('Please enter your name', 4000)
+//   }else if(!phone){
+//     alert('Please enter your phone number', 4000)
+//   }
+// })
 
 })
