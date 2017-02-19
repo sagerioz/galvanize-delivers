@@ -25,15 +25,9 @@ $(document).ready(function() {
   let total = 0;
   let name = orderObject.burger.name
   let price = orderObject.burger.price
-  //console.log("Quantity", itemQuantity);
-  //total = orderObject.burger.price * itemQuantity;
-
-  // console.log("total...", total);
 
   // Add Item to Order list
-  // try to target the whole container
   $(".container").click(function(event) {
-    event.preventDefault();
     //console.log("EVENT TARGET", event.target);
     if ($(event.target).is('.button')) {
       // console.log('herererere');
@@ -58,32 +52,32 @@ $(document).ready(function() {
     let table = $('table')
     let tbody = $("#orderTable")
     tbody.html('')
-    //console.log('MY TABLE=',table.children());
 
     let subtotal = 0;
     for (name in orderObject) {
       if (orderObject[name].quantity !== 0) {
 
-        // console.log("QUANTITY", orderObject[name].quantity);
-        // console.log("price", orderObject[name].price);
-        let currentTotal = (orderObject[name].quantity * orderObject[name].price)
+        let currentTotal = orderObject[name].quantity * orderObject[name].price
 
-
+        let quantity = orderObject[name].quantity
         subtotal += currentTotal
 
         let tax = (subtotal * 0.08).toFixed(2)
         let grandTotal = parseInt(subtotal) + parseInt(tax)
+        grandTotal = (grandTotal).toFixed(2)
         let row = $('<tr></tr>').appendTo(tbody)
         console.log("ROW", row);
         $('#sub').text("$" + subtotal)
         $('#tax').text("$" + tax)
         $('#grandTotal').text("$" + grandTotal)
         //img
-        $("<td><img src='img/delete.png' id='delete' height='15px' width='15px'></td>").appendTo(row)
+        $(`<td><img src='img/delete.png' id='${name}' height='15px' width='15px' class='delete'></td>`).appendTo(row)
         //menu item
         $(`<td>${name}</td>`).appendTo(row)
         //price
         $(`<td>${currentTotal}</td>`).appendTo(row)
+        //quantity
+        $(`<td>${quantity}</td>`).appendTo(row)
 
       }
     }
@@ -93,10 +87,15 @@ $(document).ready(function() {
     return table[0];
   }
 
+  $('#orderTable').click(function(){
+    if ($(event.target).is('.delete')) {
+      let toDelete = $(event.target).attr('id')
+      orderObject[toDelete].quantity -= 1
+      createTable();
+      $('.bump').text('')
 
-
-
-
+    }
+  })
 
 
 

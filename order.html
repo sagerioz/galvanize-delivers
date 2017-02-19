@@ -5,6 +5,9 @@
   <meta charset="utf-8">
   <!-- JQuery -->
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="order.js">
+
+</script>
 
   <link rel="stylesheet" href="css/materialize.css">
   <link rel="stylesheet" href="css/materialize.min.css">
@@ -22,7 +25,7 @@
         <div class="nav-wrapper">
           <a href="index.html" class="brand-logo">Galvanize Delivers</a>
           <ul class="right hide-on-med-and-down">
-            <li><a href="order.html">Order Delivery</a></li>
+            <li><a href="index.html">Home</a></li>
           </ul>
         </div>
       </nav>
@@ -30,106 +33,110 @@
   </header>
 
   <!-- the columns section -->
-  <div class="container">
-    <div class="row">
-      <div class="col l6">
-        <h3>Menu</h3>
-        <div class="row">
-          <div class="col s12 m6 l6">
-            <!-- card -->
-            <div class="card">
-              <div class="card-image">
-                <img src="img/burger.jpg">
-                <span class="card-title"></span>
-              </div>
-              <div class="card-content">
-                <p>Royale with Cheese</p>
-                <p>$8.99</p>
-              </div>
-              <div class="card-action">
-                <a id="burger" class="button" href="#">ADD TO ORDER</a>
+  <main>
+    <div class="container">
+      <div class="row">
+        <div class="col l6">
+          <h3>Menu</h3>
+          <div class="row">
+            <div class="col s12 m6 l6">
+              <!-- card -->
+              <div class="card">
+                <div class="card-image">
+                  <img src="img/burger.jpg">
+                  <span class="card-title"></span>
+                </div>
+                <div class="card-content">
+                  <p>Royale with Cheese</p>
+                  <p>$8.99</p>
+                </div>
+                <div class="card-action">
+                  <a id="burger" class="button" href="#">ADD TO ORDER</a>
+                </div>
               </div>
             </div>
-          </div>
-          <!-- end card -->
+            <!-- end card -->
 
-          <!-- card -->
-          <div class="col s12 m6 l6">
             <!-- card -->
-            <div class="card">
-              <div class="card-image">
-                <img src="img/ribs.jpg">
-                <span class="card-title"></span>
-              </div>
-              <div class="card-content">
-                <p>Smoked Swine</p>
-                <p>$14.99</p>
-              </div>
-              <div class="card-action">
-                <a id="ribs" class="button" href="#">ADD TO ORDER</a>
+            <div class="col s12 m6 l6">
+              <!-- card -->
+              <div class="card">
+                <div class="card-image">
+                  <img src="img/ribs.jpg">
+                  <span class="card-title"></span>
+                </div>
+                <div class="card-content">
+                  <p>Smoked Swine</p>
+                  <p>$14.99</p>
+                </div>
+                <div class="card-action">
+                  <a id="ribs" class="button" href="#">ADD TO ORDER</a>
+                </div>
               </div>
             </div>
+            <!-- end card -->
           </div>
-          <!-- end card -->
+          <div class="row">
+
+            <!-- end first column, start second -->
+            <div class="col s12 m6 l6">
+              <!-- card -->
+              <div class="card">
+                <div class="card-image">
+                  <img src="img/pizza.jpg">
+                  <span class="card-title"></span>
+                </div>
+                <div class="card-content">
+                  <p>Arugula Pie</p>
+                  <p>$11.99</p>
+                </div>
+                <div class="card-action">
+                  <a href="#" class="button" id="pie">ADD TO ORDER</a>
+                </div>
+              </div>
+            </div>
+            <!-- end card -->
+
+            <!-- card -->
+            <div class="col s12 m6 l6">
+              <!-- card -->
+              <div class="card">
+                <div class="card-image">
+                  <img src="img/ice_cream.jpg">
+                  <span class="card-title"></span>
+                </div>
+                <div class="card-content">
+                  <p>Ice Cream Biscuit</p>
+                  <p>$7.99</p>
+                </div>
+                <div class="card-action">
+                  <a id="icecream" class="button" href="#">ADD TO ORDER</a>
+                </div>
+              </div>
+            </div>
+            <!-- end card -->
+          </div>
+
+<!-- the order list -->
         </div>
-        <div class="row">
-
-          <!-- end first column, start second -->
-          <div class="col s12 m6 l6">
-            <!-- card -->
-            <div class="card">
-              <div class="card-image">
-                <img src="img/pizza.jpg">
-                <span class="card-title"></span>
-              </div>
-              <div class="card-content">
-                <p>Arugula Pie</p>
-                <p>$11.99</p>
-              </div>
-              <div class="card-action">
-                <a href="#" class="button" id="pie">ADD TO ORDER</a>
-              </div>
-            </div>
-          </div>
-          <!-- end card -->
-
-          <!-- card -->
-          <div class="col s12 m6 l6">
-            <!-- card -->
-            <div class="card">
-              <div class="card-image">
-                <img src="img/ice_cream.jpg">
-                <span class="card-title"></span>
-              </div>
-              <div class="card-content">
-                <p>Ice Cream Biscuit</p>
-                <p>$7.99</p>
-              </div>
-              <div class="card-action">
-                <a id="icecream" class="button" href="#">ADD TO ORDER</a>
-              </div>
-            </div>
-          </div>
-          <!-- end card -->
-        </div>
+        <div class="col s12 m5 l5">
+          <h3>Order</h3>
+          <table class="bordered" id="table">
+            <thead>
+              <tr>
+                <th data-field="id">Clear</th>
+                <th data-field="name">Item Name</th>
+                <th data-field="price">Item Price</th>
+                <th data-field="price">Quantity</th>
 
 
-      </div>
-      <div class="col s12 m5 l5">
-        <h3>Order</h3>
-        <table class="bordered" id="table">
-          <thead>
-            <tr>
-              <th data-field="id">Clear</th>
-              <th data-field="name">Item Name</th>
-              <th data-field="price">Item Price</th>
-            </tr>
-          </thead>
+              </tr>
+            </thead>
 
-          <tbody id="orderTable">
+            <tbody id="orderTable">
 
-          </tbody>
-        </table>
+            </tbody>
+          </table>
 
 
           <table class="bordered">
@@ -138,116 +145,114 @@
                 <th data-field="1"></th>
                 <th data-field="2"></th>
                 <th data-field="3"></th>
+                <th data-field="4"></th>
 
               </tr>
             </thead>
 
             <tbody>
-            <tr>
-              <td colspan='2'>Subtotal:</td>
-              <td></td>
-              <td class="bump" id="sub">$0.00</td>
-            </tr>
-            <tr>
-              <td colspan='2'>Tax:</td>
-              <td></td>
-              <td class="bump"
-              id="tax">$0.00</td>
-            </tr>
-            <tr>
-              <td colspan='2'>Total:</td>
-              <td></td>
-              <td class="bump" id="grandTotal">$0.00</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <!-- end of order table -->
-      <!-- <form class="col s12 m5 l5">
-  <div class="row">
-    <div class="input-field col s6">
-      <i class="material-icons prefix">account_circle</i>
-      <input id="icon_prefix" type="text" class="validate" placeholder="First Name">
-      <label for="icon_prefix"></label>
-    </div>
-    <div class="input-field col s6">
-      <i class="material-icons prefix">phone</i>
-      <input id="icon_telephone" type="tel" class="validate" placeholder="Telephone">
-      <label for="icon_telephone"></label>
-    </div>
-    <div class="input-field col s6">
-      <i class="material-icons prefix">business</i>
-      <input id="icon_prefix" type="text" class="validate" placeholder="Address Location to Deliver">
-      <label for="icon_prefix"></label>
-    </div>
-    <p class="bump">Please Indicate Day/Time of Delivery Requested:</p>
-    <div class="input-field col s6">
-      <i class="material-icons prefix">schedule</i>
-      <input id="icon_prefix" type="datetime-local" class="validate">
-      <label for="icon_prefix"></label>
-      </div>
+              <tr>
+                <td colspan='2'>Subtotal:</td>
+                <td></td>
+                <td class="bump" id="sub">$0.00</td>
+              </tr>
+              <tr>
+                <td colspan='2'>Tax:</td>
+                <td></td>
+                <td class="bump" id="tax">$0.00</td>
+              </tr>
+              <tr>
+                <td colspan='2'>Grand Total:</td>
+                <td></td>
+                <td class="bump" id="grandTotal">$0.00</td>
+              </tr>
+              <tr>
+                <td colspan='2'>
+                  <ul class="right hide-on-med-and-down">
+                    <li><a class="btn disabled" href="orderCompleted.html">Recalculate</a></li>
+                  </ul>
+                </td>
+                <td></td>
+                <td></td>
+              </tr>
 
-    <div class="input-field col s6">
-      <i class="material-icons prefix">email</i>
-      <input id="icon_prefix" type="email" class="validate" placeholder="Email">
-      <label for="icon_prefix"></label>
-    </div>
+            </tbody>
+          </table>
+        </div>
 
-    <div class="input-field col s6">
-      <i class="material-icons prefix">mode_edit</i>
-      <textarea rows="4" cols="50" id="icon_prefix" class="validate">
-      Special Instructions for Your Order
-      </textarea>
-      <label for="icon_prefix"></label>
-    </div>
+        <!-- input form -->
+        <div class="row">
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s6">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="icon_prefix" type="text" class="validate" placeholder="First Name">
+                <label for="icon_prefix"></label>
+              </div>
+              <div class="input-field col s6">
+                <i class="material-icons prefix">phone</i>
+                <input id="icon_telephone" type="tel" class="validate" placeholder="Telephone">
+                <label for="icon_telephone"></label>
+              </div>
+              <div class="input-field col s6">
+                <i class="material-icons prefix">business</i>
+                <input id="icon_prefix" type="text" class="validate" placeholder="Address Location to Deliver">
+                <label for="icon_prefix"></label>
+              </div>
+              <p class="bump">Please Indicate Day/Time of Delivery Requested:</p>
+              <div class="input-field col s6">
+                <i class="material-icons prefix">schedule</i>
+                <input id="icon_prefix" type="datetime-local" class="validate">
+                <label for="icon_prefix"></label>
+              </div>
 
-  </div>
-</form> -->
-      <!-- input form -->
-      <div class="row">
-        <form class="col s12">
-          <div class="row">
-            <div class="input-field col s6">
-              <i class="material-icons prefix">account_circle</i>
-              <input id="icon_prefix" type="text" class="validate" placeholder="First Name">
-              <label for="icon_prefix"></label>
-            </div>
-            <div class="input-field col s6">
-              <i class="material-icons prefix">phone</i>
-              <input id="icon_telephone" type="tel" class="validate" placeholder="Telephone">
-              <label for="icon_telephone"></label>
-            </div>
-            <div class="input-field col s6">
-              <i class="material-icons prefix">business</i>
-              <input id="icon_prefix" type="text" class="validate" placeholder="Address Location to Deliver">
-              <label for="icon_prefix"></label>
-            </div>
-            <p class="bump">Please Indicate Day/Time of Delivery Requested:</p>
-            <div class="input-field col s6">
-              <i class="material-icons prefix">schedule</i>
-              <input id="icon_prefix" type="datetime-local" class="validate">
-              <label for="icon_prefix"></label>
-            </div>
+              <div class="input-field col s6">
+                <i class="material-icons prefix">email</i>
+                <input id="icon_prefix" type="email" class="validate" placeholder="Email">
+                <label for="icon_prefix"></label>
+              </div>
 
-            <div class="input-field col s6">
-              <i class="material-icons prefix">email</i>
-              <input id="icon_prefix" type="email" class="validate" placeholder="Email">
-              <label for="icon_prefix"></label>
-            </div>
-
-            <div class="input-field col s6">
-              <i class="material-icons prefix">mode_edit</i>
-              <textarea rows="4" cols="50" id="icon_prefix" class="validate">
-          Special Instructions for Your Order
+              <div class="input-field col s6">
+                <i class="material-icons prefix">mode_edit</i>
+                <textarea rows="4" cols="50" id="icon_prefix" class="validate">
+          Special Instructions
           </textarea>
-              <label for="icon_prefix"></label>
+                <label for="icon_prefix"></label>
+              </div>
+
             </div>
 
-          </div>
-        </form>
+          </form>
+
+        </div>
+        <div class="centered">
+          <a href="orderCompleted.html"><img src="img/banner_submit.png"</a>
+
+        </div>
+  </main>
+
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Galvanize Delivers</h5>
+          <p class="grey-text text-lighten-4">Fine Dining, Delivered</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="index.html">Home</a></li>
+            <li><a class="grey-text text-lighten-3" href="order.html">Order Delivery</a></li>
+          </ul>
+        </div>
       </div>
     </div>
-    <script src="order.js"></script>
-</body>
+    <footer>
+    <div class="footer-copyright">
+      <div class="container">
+        © 2017 Copyright Text
+        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+      </div>
+    </div>
+  </footer>
 
 </html>
