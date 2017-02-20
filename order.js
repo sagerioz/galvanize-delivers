@@ -27,30 +27,17 @@ $(document).ready(function() {
   let name = orderObject.burger.name
   let price = orderObject.burger.price
 
-  // Add Item to Order list
+  // --------- Add Item to Order list -------------->
   $(".container").click(function(event) {
-    //console.log("EVENT TARGET", event.target);
     if ($(event.target).is('.button')) {
-      // console.log('herererere');
       let currID = $(event.target).attr('id')
-      // console.log("EVENT TARGET", currID);
       orderObject[currID].quantity += 1
-      //console.log(orderObject[currID].quantity);
       createTable(orderObject);
       orderStatus = true;
-      // console.log("EVENT TARGET", $(event.target));
-
     }
-
-
   })
-
-
-
-  //--------------build table-------------->
-
+  //-------------- build table -------------->
   function createTable(data) {
-
     let table = $('table')
     let tbody = $("#orderTable")
     tbody.html('')
@@ -66,11 +53,7 @@ $(document).ready(function() {
         let tax = (subtotal * 0.08).toFixed(2)
         let grandTotal = parseFloat(subtotal) + parseFloat(tax)
         grandTotal = (grandTotal).toFixed(2)
-        console.log("here!!");
-        console.log("SUBTOTAL", subtotal, "TAX", tax, "GTOTAL", grandTotal);
-
         let row = $('<tr></tr>').appendTo(tbody)
-        // console.log("ROW", row);
         $('#sub').text(`$ ${subtotal}`)
         $('#tax').text(`$ ${tax}`)
         $('#grandTotal').text(`$ ${grandTotal}`)
@@ -85,9 +68,6 @@ $(document).ready(function() {
 
       }
     }
-
-    // console.log("TABLE:", table);
-
     return table[0];
   }
 
@@ -96,28 +76,28 @@ $(document).ready(function() {
       let toDelete = $(event.target).attr('id')
       orderObject[toDelete].quantity -= 1
       createTable();
-
     }
   })
-  $('#moreStuffButn').click(function(e){
-  $('#moreStuff').show();
-   e.preventDefault();
-});
+  $('#moreStuffButn').click(function(e) {
+    $('#moreStuff').show();
+    e.preventDefault();
+  });
 
-$('#btn_submit').click(function(){
-  let names = $.trim($('#names').val()).length > 0;
-  let email = $.trim($('#email').val()).length > 0;
-  let phone = $.trim($('#telephone').val()).length > 0;
-  let address = $.trim($('#address').val()).length > 0;
-  console.log("T OR F", names);
-  if (!orderStatus) {
+  $('#btn_submit').click(function() {
+    let names = $.trim($('#names').val()).length > 0;
+    let email = $.trim($('#email').val()).length > 0;
+    let phone = $.trim($('#telephone').val()).length > 0;
+    let address = $.trim($('#address').val()).length > 0;
+    if (!orderStatus) {
     Materialize.toast('Please place an order', 3000)
-  }else if(names && email && phone && address){
+    }
+    else if (names && email && phone && address) {
     Materialize.toast('Thank you for your order!', 6000)
-  }else{
+    }
+    else {
     Materialize.toast('Please complete the form', 3000)
-  }
-})
+    }
+  })
 
 
 
