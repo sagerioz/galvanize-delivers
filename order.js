@@ -35,7 +35,7 @@ $(document).ready(function() {
       let currID = $(event.target).attr('id')
       // console.log("EVENT TARGET", currID);
       orderObject[currID].quantity += 1
-      console.log(orderObject[currID].quantity);
+      //console.log(orderObject[currID].quantity);
       createTable(orderObject);
       orderStatus = true;
       // console.log("EVENT TARGET", $(event.target));
@@ -64,13 +64,16 @@ $(document).ready(function() {
         subtotal += currentTotal
 
         let tax = (subtotal * 0.08).toFixed(2)
-        let grandTotal = parseInt(subtotal) + parseInt(tax)
+        let grandTotal = parseFloat(subtotal) + parseFloat(tax)
         grandTotal = (grandTotal).toFixed(2)
+        console.log("here!!");
+        console.log("SUBTOTAL", subtotal, "TAX", tax, "GTOTAL", grandTotal);
+
         let row = $('<tr></tr>').appendTo(tbody)
         // console.log("ROW", row);
-        $('#sub').text("$" + subtotal)
-        $('#tax').text("$" + tax)
-        $('#grandTotal').text("$" + grandTotal)
+        $('#sub').text(`$ ${subtotal}`)
+        $('#tax').text(`$ ${tax}`)
+        $('#grandTotal').text(`$ ${grandTotal}`)
         //img
         $(`<td class="bump"><img src='img/delete.png' id='${name}' height='15px' width='15px' class='delete'></td>`).appendTo(row)
         //menu item
