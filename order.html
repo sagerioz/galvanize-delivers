@@ -5,9 +5,11 @@
   <meta charset="utf-8">
   <!-- JQuery -->
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="order.js">
+  <script type="text/javascript" src="order.js">
+  </script>
 
-</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js">
+  </script>
 
   <link rel="stylesheet" href="css/materialize.css">
   <link rel="stylesheet" href="css/materialize.min.css">
@@ -117,7 +119,7 @@
             <!-- end card -->
           </div>
 
-<!-- the order list -->
+          <!-- the order list -->
         </div>
         <div class="col s12 m5 l5">
           <h3>Order</h3>
@@ -179,23 +181,23 @@
                 <td colspan='2'>
                   <form action="#" style="display:none;" id="moreStuff">
                     <p>Choose additional items:</p>
-                      <p>
-                        <input type="checkbox" id="togo_utensils" />
-                        <label for="togo_utensils">Plastic togo utensils</label>
-                      </p>
-                      <p>
-                        <input type="checkbox" id="napkins"/>
-                        <label for="napkins">Napkins</label>
-                      </p>
-                      <p>
-                        <input type="checkbox" id="condiments"/>
-                        <label for="condiments">Condiments</label>
-                      </p>
+                    <p>
+                      <input type="checkbox" id="togo_utensils" />
+                      <label for="togo_utensils">Plastic togo utensils</label>
+                    </p>
+                    <p>
+                      <input type="checkbox" id="napkins" />
+                      <label for="napkins">Napkins</label>
+                    </p>
+                    <p>
+                      <input type="checkbox" id="condiments" />
+                      <label for="condiments">Condiments</label>
+                    </p>
 
-                    </form>
-                  </td>
-                  <td></td>
-                  <td></td>
+                  </form>
+                </td>
+                <td></td>
+                <td></td>
             </tbody>
           </table>
 
@@ -205,33 +207,34 @@
         <div class="row">
 
           <form class="col s12" id='customer_info'>
-            <div class="row">  <hr>
+            <div class="row">
+              <hr>
               <div class="input-field col s6">
                 <i class="material-icons prefix">account_circle</i>
-                <input id="names" type="text" class="validate" required placeholder="First and Last Name">
-                <label for="names"></label>
+                <input id="names" type="text" class="validate" placeholder="First and Last Name" required="">
+                <label for="names" data-error="wrong" data-success="right"></label>
               </div>
               <div class="input-field col s6">
                 <i class="material-icons prefix">phone</i>
-                <input id="telephone" type="tel" class="validate" placeholder="Telephone" required>
-                <label for="telephone"></label>
+                <input id="telephone" type="tel" class="validate" placeholder="000-000-0000" required="" pattern="^[1-9]\d{2}-\d{3}-\d{4}">
+                <label for="telephone" data-error="wrong" data-success="right"></label>
               </div>
               <div class="input-field col s6">
                 <i class="material-icons prefix">business</i>
-                <input id="address" type="text" class="validate" placeholder="Address Location to Deliver">
-                <label for="address"></label>
+                <input id="address" type="text" class="validate" placeholder="Address Location to Deliver" required="">
+                <label for="address" data-error="wrong" data-success="right"></label>
               </div>
               <p class="bump">Please Indicate Day/Time of Delivery Requested:</p>
               <div class="input-field col s6">
                 <i class="material-icons prefix">schedule</i>
-                <input id="date_time" type="datetime-local" required>
-                <label for="date_time"></label>
+                <input id="date_time" type="datetime-local" required="">
+                <label for="date_time" data-error="wrong" data-success="right"></label>
               </div>
 
               <div class="input-field col s6">
                 <i class="material-icons prefix">email</i>
-                <input id="email" type="email" class="validate" placeholder="Email">
-                <label for="email"></label>
+                <input id="email" type="email" class="validate" placeholder="Email" required="">
+                <label for="email" data-error="wrong" data-success="right"></label>
               </div>
 
               <div class="input-field col s6">
@@ -248,17 +251,11 @@
 
         </div>
 
-<!-- Submit and Toast -->
+        <!-- Submit and Toast -->
 
-
-
-
-
-
-<div class="centered" id="submit">
-  <a id="submit_banner" onclick="Materialize.toast('hello', 4000)"><img src="img/banner_submit.png"></a>
-
-</div>
+        <div class="centered" id="btn_submit">
+          <a id="submit_banner"><img src="img/banner_submit.png"></a>
+        </div>
   </main>
 
   <footer class="page-footer">
@@ -277,12 +274,12 @@
       </div>
     </div>
     <footer>
-    <div class="footer-copyright">
-      <div class="container">
-        © 2017 Copyright Text
-        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+      <div class="footer-copyright">
+        <div class="container">
+          © 2017 Copyright Text
+          <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
 </html>

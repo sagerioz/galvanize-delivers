@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  let orderStatus = false;
   let orderObject = {
     burger: {
       name: "Burger",
@@ -36,6 +37,7 @@ $(document).ready(function() {
       orderObject[currID].quantity += 1
       console.log(orderObject[currID].quantity);
       createTable(orderObject);
+      orderStatus = true;
       // console.log("EVENT TARGET", $(event.target));
 
     }
@@ -98,5 +100,22 @@ $(document).ready(function() {
   $('#moreStuff').show();
    e.preventDefault();
 });
+
+$('#btn_submit').click(function(){
+  let names = $.trim($('#names').val()).length > 0;
+  let email = $.trim($('#email').val()).length > 0;
+  let phone = $.trim($('#telephone').val()).length > 0;
+  let address = $.trim($('#address').val()).length > 0;
+  console.log("T OR F", names);
+  if (!orderStatus) {
+    Materialize.toast('Please place an order', 3000)
+  }else if(names && email && phone && address){
+    Materialize.toast('Thank you for your order!', 6000)
+  }else{
+    Materialize.toast('Please complete the form', 3000)
+  }
+})
+
+
 
 })
