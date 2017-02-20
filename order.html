@@ -208,38 +208,38 @@
             <div class="row">  <hr>
               <div class="input-field col s6">
                 <i class="material-icons prefix">account_circle</i>
-                <input id="names_field" type="text" class="validate" placeholder="First and Last Name">
-                <label for="icon_prefix"></label>
+                <input id="names" type="text" class="validate" required placeholder="First and Last Name">
+                <label for="names"></label>
               </div>
               <div class="input-field col s6">
                 <i class="material-icons prefix">phone</i>
-                <input id="telephone" type="tel" class="validate" placeholder="Telephone">
-                <label for="icon_telephone"></label>
+                <input id="telephone" type="tel" class="validate" placeholder="Telephone" required>
+                <label for="telephone"></label>
               </div>
               <div class="input-field col s6">
                 <i class="material-icons prefix">business</i>
-                <input id="icon_prefix" type="text" class="validate" placeholder="Address Location to Deliver">
-                <label for="icon_prefix"></label>
+                <input id="address" type="text" class="validate" placeholder="Address Location to Deliver">
+                <label for="address"></label>
               </div>
               <p class="bump">Please Indicate Day/Time of Delivery Requested:</p>
               <div class="input-field col s6">
                 <i class="material-icons prefix">schedule</i>
-                <input id="icon_prefix" type="datetime-local">
-                <label for="icon_prefix"></label>
+                <input id="date_time" type="datetime-local" required>
+                <label for="date_time"></label>
               </div>
 
               <div class="input-field col s6">
                 <i class="material-icons prefix">email</i>
-                <input id="icon_prefix" type="email" class="validate" placeholder="Email">
-                <label for="icon_prefix" data-error="wrong" data-success="right"></label>
+                <input id="email" type="email" class="validate" placeholder="Email">
+                <label for="email"></label>
               </div>
 
               <div class="input-field col s6">
                 <i class="material-icons prefix">mode_edit</i>
-                <textarea rows="4" cols="50" id="icon_prefix">
+                <textarea rows="4" cols="50" id="special_notes">
           Special Instructions
           </textarea>
-                <label for="icon_prefix"></label>
+                <label for="special_notes"></label>
               </div>
 
             </div>
@@ -255,10 +255,10 @@
 
 
 
-        <div class="centered" id="submit_banner">
-          <a id="submit_banner"><img src="img/banner_submit.png"</a>
+<div class="centered" id="submit">
+  <a id="submit_banner" onclick="Materialize.toast('hello', 4000)"><img src="img/banner_submit.png"></a>
 
-        </div>
+</div>
   </main>
 
   <footer class="page-footer">

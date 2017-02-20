@@ -99,15 +99,4 @@ $(document).ready(function() {
    e.preventDefault();
 });
 
-// $('#submit_banner').click(function(){
-//   var names = $('#names_field').val();
-//   console.log("NAMES", names);
-//   var phone = $('#telephone').val();
-//   if(!names){
-//     alert('Please enter your name', 4000)
-//   }else if(!phone){
-//     alert('Please enter your phone number', 4000)
-//   }
-// })
-
 })
