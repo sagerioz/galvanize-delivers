@@ -27,8 +27,9 @@ h1.center-align {
 }
 
 .material-icons{
-    display: inline-flex;
+    display: inline-block;
     font-size: 22px;
+    vertical-align: bottom;
 }
 
 #txt1 {
@@ -36,6 +37,7 @@ h1.center-align {
  line-height:20px;
  color: #ee2e74;
  }
+
 .btn,
 .btn:hover,
 .btn:active {
@@ -44,6 +46,7 @@ h1.center-align {
 
 .bump {
   text-align: center;
+  vertical-align: center;
   color: rgb(129, 134, 135);
 }
 
@@ -52,7 +55,7 @@ h1.center-align {
 
 }
 
-img {
+img .banner{
   margin-bottom: 20px;
 }
 
@@ -76,4 +79,7 @@ body {
     border-top: 3px double #ee2e74;
     margin: 2em 0;
     padding: 0;
+}
+html {
+  font-family: 'Open Sans', sans-serif;
 }

@@ -72,13 +72,13 @@ $(document).ready(function() {
         $('#tax').text("$" + tax)
         $('#grandTotal').text("$" + grandTotal)
         //img
-        $(`<td><img src='img/delete.png' id='${name}' height='15px' width='15px' class='delete'></td>`).appendTo(row)
+        $(`<td class="bump"><img src='img/delete.png' id='${name}' height='15px' width='15px' class='delete'></td>`).appendTo(row)
         //menu item
         $(`<td>${name}</td>`).appendTo(row)
         //price
         $(`<td>${currentTotal}</td>`).appendTo(row)
         //quantity
-        $(`<td>${quantity}</td>`).appendTo(row)
+        $(`<td class="bump">${quantity}</td>`).appendTo(row)
 
       }
     }
