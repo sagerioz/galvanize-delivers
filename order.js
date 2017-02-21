@@ -27,7 +27,8 @@ $(document).ready(function() {
   let name = orderObject.burger.name
   let price = orderObject.burger.price
 
-  // --------- Add Item to Order list -------------->
+// --------------------- Add Item to Order list -------------->
+
   $(".container").click(function(event) {
     if ($(event.target).is('.button')) {
       let currID = $(event.target).attr('id')
@@ -36,7 +37,9 @@ $(document).ready(function() {
       orderStatus = true;
     }
   })
-  //-------------- build table -------------->
+
+// ------------------------- Build table --------------------->
+
   function createTable(data) {
     let table = $('table')
     let tbody = $("#orderTable")
@@ -46,10 +49,8 @@ $(document).ready(function() {
     for (name in orderObject) {
       if (orderObject[name].quantity !== 0) {
         let currentTotal = orderObject[name].quantity * orderObject[name].price
-
         let quantity = orderObject[name].quantity
         subtotal += currentTotal
-
         let tax = (subtotal * 0.08).toFixed(2)
         let grandTotal = parseFloat(subtotal) + parseFloat(tax)
         grandTotal = (grandTotal).toFixed(2)
@@ -65,11 +66,12 @@ $(document).ready(function() {
         $(`<td>${currentTotal}</td>`).appendTo(row)
         //quantity
         $(`<td class="bump">${quantity}</td>`).appendTo(row)
-
       }
     }
     return table[0];
   }
+
+// -------------------- Delete items --------------------------->
 
   $('#orderTable').click(function() {
     if ($(event.target).is('.delete')) {
@@ -78,10 +80,15 @@ $(document).ready(function() {
       createTable();
     }
   })
+
+// --------------------- Add ons section ------------------------>
+
   $('#moreStuffButn').click(function(e) {
     $('#moreStuff').show();
     e.preventDefault();
   });
+
+// --------------------- Toast validate ------------------------->
 
   $('#btn_submit').click(function() {
     let names = $.trim($('#names').val()).length > 0;
